@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bullet Journal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar">
+        <header>
+          <h1>Bullet Journal</h1>
+          <button id="export" title="Export JSON">Export</button>
+        </header>
+        <section class="section">
+          <h2>Index</h2>
+          <div class="search-group">
+            <input type="search" id="search" placeholder="Search entries..." />
+          </div>
+          <ul id="index-list"></ul>
+        </section>
+        <section class="section">
+          <h2>Collections</h2>
+          <div class="input-group">
+            <input type="text" id="collection-name" placeholder="New collection" />
+            <button id="add-collection">+</button>
+          </div>
+          <ul id="collection-list"></ul>
+        </section>
+        <section class="section">
+          <h2>Trackers</h2>
+          <div class="input-group">
+            <input type="text" id="tracker-name" placeholder="Tracker name" />
+            <select id="tracker-type">
+              <option value="boolean">Habit</option>
+              <option value="numeric">Numeric</option>
+            </select>
+            <input type="text" id="tracker-unit" placeholder="Unit (optional)" />
+            <button id="add-tracker">+</button>
+          </div>
+          <ul id="tracker-list"></ul>
+        </section>
+      </aside>
+      <main>
+        <nav class="tabs">
+          <button data-view="daily" class="active">Daily Log</button>
+          <button data-view="monthly">Monthly Log</button>
+          <button data-view="collections">Collections</button>
+          <button data-view="trackers">Trackers</button>
+        </nav>
+        <section class="toolbar">
+          <div class="input-group">
+            <input type="date" id="entry-date" />
+            <select id="entry-type">
+              <option value="task">Task</option>
+              <option value="event">Event</option>
+              <option value="note">Note</option>
+            </select>
+            <input type="text" id="entry-tags" placeholder="tags" />
+          </div>
+          <div class="input-group">
+            <input type="text" id="entry-content" placeholder="Rapid log..." />
+            <button id="add-entry">Add</button>
+          </div>
+        </section>
+        <section class="view" id="daily-view"></section>
+        <section class="view hidden" id="monthly-view"></section>
+        <section class="view hidden" id="collections-view"></section>
+        <section class="view hidden" id="trackers-view"></section>
+      </main>
+    </div>
+    <script src="renderer.js"></script>
+  </body>
+</html>

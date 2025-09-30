@@ -1,0 +1,18 @@
+{
+  "name": "bullet-journal",
+  "version": "0.1.0",
+  "description": "Local-only digital bullet journal built with Electron and SQLite.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "better-sqlite3": "^9.4.3",
+    "electron-store": "^8.1.0"
+  },
+  "devDependencies": {
+    "electron": "^28.2.0",
+    "electron-builder": "^24.13.3"
+  }
+}
